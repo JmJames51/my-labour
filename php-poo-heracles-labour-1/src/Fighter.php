@@ -6,7 +6,7 @@ class Fighter
 
     private const MAX_LIFE = 100;
     
-    private string $name;
+    private string $name; 
     private int $strength;
     private int $dexterity;
     private int $life = self::MAX_LIFE; 
@@ -19,7 +19,35 @@ class Fighter
         $this->dexterity= $dexterity;
         
 
-    }    
+    }   
+
+    public function __get($propriete){
+        switch($propriete){
+            case "name" : return $this->name;
+                break;
+            case "strength" : return $this->strength;
+                break;
+            case "dexterity" : return $this->dexterity;
+                break;
+            case "life" : return $this->life;
+                break;
+            default: throw new Exception("Propriété ' . $propriete . ' inconnue");
+        }
+    }
+
+    public function __set($propriete,$value){
+        switch($propriete){
+            case "name" : return $this->name = $value;
+                break;
+            case "strength" : return $this->strength= $value;
+                break;
+            case "dexterity" : return $this->dexterity= $value;
+                break;
+            case "life" : return $this->life= $value;
+                break;
+            default: throw new Exception("Propriété '$propriete' inconnue");
+        }
+    }
 
     public function fight(Fighter $enemy)
     { 
