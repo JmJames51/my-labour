@@ -21,15 +21,16 @@ while($heracles->isALive()  && $nemeanLion-> isAlive() )
    
 }
 if(!$heracles->isAlive() && !$nemeanLion->isAlive()){
-    echo "MATCH NUL, AUCUN GAGNANT";
+    echo " 💀 MATCH NUL, AUCUN GAGNANT 💀 \n";
 }
 elseif( !$heracles->isAlive())
 { 
     echo " 💀  $heracles->name est mort !\n";
-    echo " 🏆  $nemeanLion->name wins ! (💙 $nemeanLion->life) ";
+    echo " 🏆  $nemeanLion->name obtiens la victoire royale ! (et survis avec 💙 $nemeanLion->life restant) \n";
 }else{
     echo " 💀  $nemeanLion->name est mort !\n";
-    echo " 🏆  $heracles->name wins !(💙 $heracles->life) ";
+    echo " 🏆  $heracles->name obtiens la victoire royale ! (et survis avec 💙 $heracles->life restant)\n ";
 }
     
+
 
